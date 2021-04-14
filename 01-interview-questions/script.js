@@ -1,4 +1,6 @@
 "use strict";
+
+// Alg 1: FizzBuzz
 const fizzy = function () {
   //   const fizzArr = [];
   const word2 = "Fizz";
@@ -20,6 +22,7 @@ const fizzy = function () {
 
 // fizzy();
 
+// Alg 2: count the values
 const fizzyMult = function () {
   let counter = 0;
   for (let i = 1; i < 1000; i++) {
@@ -35,7 +38,6 @@ const fizzyMult = function () {
 // console.log(fizzyMult());
 
 // Alg 3: Fibonacci Sequence
-
 const fibby = function () {
   const terms = [1, 2];
   let total = 0;
@@ -51,4 +53,19 @@ const fibby = function () {
   console.log(evenSum);
 };
 
-fibby();
+// fibby();
+
+// Alg 4: Prime Factors
+
+// multiples
+const multis = function (num) {
+  const multiplesArr = [];
+  // const multiPrimesArr = [];
+  for (let i = 2; i <= num; i++) {
+    if (!(num % i)) {
+      multiplesArr.push(i);
+    }
+  }
+};
+
+console.log(multis(13195));
