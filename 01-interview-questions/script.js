@@ -58,16 +58,6 @@ const fibby = function () {
 // Alg 4: Prime Factors
 
 // multiples
-const multis = function (num) {
-  const primesArr = [];
-  for (let i = 2; i <= num; i++) {
-    if (!(num % i) && isPrime(i)) {
-      primesArr.push(i);
-    }
-  }
-  return primesArr;
-};
-
 const isPrime = function (x) {
   if (x <= 1) {
     return false;
@@ -80,8 +70,17 @@ const isPrime = function (x) {
   return true;
 };
 
-console.log(isPrime(11));
+const multis = function (num) {
+  const primesArr = [];
+  for (let i = 2; i <= num; i++) {
+    if (!(num % i) && isPrime(i)) {
+      primesArr.push(i);
+    }
+  }
+  return primesArr;
+};
 
+console.log(isPrime(11));
 console.log(multis(13195));
 
 // // function check whether a number
@@ -146,3 +145,35 @@ console.log(multis(13195));
 // }
 
 // console.log(is_prime(4534532235));
+
+// const pythag
+const pythag = function (trip) {
+  let a, b, c;
+  trip = a + b + c;
+  c = Math.sqrt(pow(a, 2) + pow(b, 2));
+  for (let i = 1; i < trip; i++) {
+    let a = i;
+  }
+};
+
+// css for coding challenge 2;
+
+// single character between strings
+const string1 = "abbbbbc";
+const string2 = "aabbbbfcce";
+// const diff1 = new Set(string1);
+// const diff2 = new Set(string2);
+// console.log(diff1, diff2);
+
+const diff3 = [...new Set(string1)];
+const diff4 = [...new Set(string2)];
+
+// for (let i = 0; i < diff4.length; i++) {
+//   for (let j = 0; j < diff3.length; j++) {
+//     if (i !== j) {
+//       console.log(diff4[j]);
+//     }
+//   }
+// }
+
+console.log(diff3, diff4);
