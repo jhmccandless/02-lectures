@@ -6,28 +6,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        display: flex;
+        height: 100px;
+        width: 500px;
+        flex-wrap: wrap;
+      }
       #triangle-up {
         width: 0;
         height: 0;
-        border-left: 50px solid blue;
-        border-right: 50px solid;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
         border-bottom: 100px solid red;
       }
       #square {
         width: 100px;
         height: 100px;
-        /* border-left: 50px solid transparent;
-        border-right: 50px solid transparent; */
         background-color: red;
       }
       #oval {
         width: 100px;
-        height: 100px;
-        /* padding: 0, 25px, 0, 25px; */
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
+        height: 150px;
         background-color: red;
         border-radius: 50%;
+      }
+
+      #circle {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+      }
+
+      #triangle-down {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 100px solid red;
+      }
+
+      #triangle-left {
+        width: 0;
+        height: 0;
+        border-right: 100px solid red;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+      }
+
+      #triangle-90 {
+        margin-left: 10px;
+        width: 0;
+        height: 0;
+        border-right: 100px solid transparent;
+        border-bottom: 100px solid red;
+      }
+
+      #trapezoid {
+        width: 50px;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid red;
+        border-top: 10px solid transparent;
+      }
+
+      #six-star {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 75px solid red;
+        margin-top: 25px;
+      }
+
+      .triangle-up2 {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 75px solid red;
+      }
+
+      #square-d-bot {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 50px solid red;
+        margin-top: 50px;
+      }
+
+      .square-d-top {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 50px solid red;
+      }
+
+      #pac-body {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .pac-mouth {
+        width: 0;
+        height: 0;
+        border-right: 50px solid white;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        z-index: 0;
+        margin-left: 50px;
       }
     </style>
   </head>
@@ -36,6 +134,23 @@
     <div></div>
     <div id="square"></div>
     <div id="oval"></div>
+    <div id="circle"></div>
+    <div id="triangle-down"></div>
+    <div id="triangle-left"></div>
+    <div id="triangle-90"></div>
+    <div id="trapezoid"></div>
+    <div class="six-sided">
+      <div id="six-star"></div>
+      <div class="triangle-up2"></div>
+    </div>
+    <div class="square-diamond">
+      <div id="square-d-bot"></div>
+      <div class="square-d-top"></div>
+    </div>
+    <div class="pac-man">
+      <div id="pac-body"></div>
+      <div class="pac-mouth"></div>
+    </div>
     <!-- <h2>This is script</h2> -->
     <script src="script.js"></script>
   </body>
