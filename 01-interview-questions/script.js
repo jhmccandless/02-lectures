@@ -75,13 +75,14 @@ const multis = function (num) {
   for (let i = 2; i <= num; i++) {
     if (!(num % i) && isPrime(i)) {
       primesArr.push(i);
-      primesArr.shift();
+      // primesArr.shift();
     }
   }
-  return primesArr[0];
+  return primesArr;
 };
 
-console.log(multis(6000000000));
+// This will cause a long time to solve!!
+console.log(multis(13195));
 
 // 10,001 prime number
 
@@ -108,11 +109,10 @@ const primeCounts = function (num) {
 //   return primesArr;
 // };
 
-console.log(primeCounts(50));
+// console.log(primeCounts(50));
 // console.log(primeCountsWhile(50));
-
-// // function check whether a number
-// // is prime or not
+// ************************************************************
+//////////////function check whether a is prime
 // function isPrime(n) {
 //   // Corner case
 //   if (n <= 1) return false;
@@ -173,3 +173,37 @@ console.log(primeCounts(50));
 // }
 
 // console.log(is_prime(4534532235));
+// ************************************************************
+
+// single character difference///////////////////////////
+const str1 = "aaabbcdd";
+const str2 = "abdbacade";
+
+// just straight up if no repeats
+const compareStr = function () {
+  const extraLetterArr = [];
+  for (let i = 0; i < str2.length; i++) {
+    if (!str1.includes(str2[i])) {
+      extraLetterArr.push(str2[i]);
+    }
+  }
+  return extraLetterArr;
+};
+
+// console.log(compareStr());
+
+// for potential repeated numbers
+const set1 = [...new Set(str1)];
+const set2 = [...new Set(str2)];
+
+const compare = function () {
+  const diffArr = [];
+  for (let i = 0; i < set2.length; i++) {
+    if (!set1.includes(set2[i])) {
+      diffArr.push(set2[i]);
+    }
+  }
+  return diffArr;
+};
+
+// console.log(compare());
