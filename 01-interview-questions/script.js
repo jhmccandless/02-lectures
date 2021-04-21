@@ -71,46 +71,53 @@ const isPrime = function (x) {
 };
 
 const multis = function (num) {
+  let counter = num;
   const primesArr = [0];
-  for (let i = 2; i <= num; i++) {
-    if (!(num % i) && isPrime(i)) {
-      primesArr.push(i);
-      // primesArr.shift();
+  for (let i = 2; i <= counter; i++) {
+    if (i % 2) {
+      if (!(counter % i) && isPrime(i)) {
+        primesArr.push(i);
+        console.log(counter);
+        counter = counter / i;
+        primesArr.shift();
+      }
     }
   }
   return primesArr;
 };
-
-// This will cause a long time to solve!!
-console.log(multis(13195));
+// console.log(multis(600851475143));
+// 600851475143
 
 // 10,001 prime number
-
-const primeCounts = function (num) {
-  const primesArr = [];
-  for (let i = 2; i <= num; i++) {
-    if (isPrime(i)) {
-      primesArr.push(i);
-    }
-  }
-  return primesArr;
-};
-
-// const primeCountsWhile = function () {
+////////////////////////for loop dont work//////////////
+// const primeCounts = function (num) {
 //   const primesArr = [];
-//   let i = 2;
-//   while (i < 20) {
+//   for (let i = 2; i <= num; i++) {
 //     if (isPrime(i)) {
 //       primesArr.push(i);
-//       i++;
 //     }
 //   }
-
 //   return primesArr;
 // };
-
 // console.log(primeCounts(50));
-// console.log(primeCountsWhile(50));
+
+const primeCountsWhile = function (count) {
+  let primeCounter = 0;
+  const primeArr = [0];
+  let i = 0;
+  while (primeCounter < count) {
+    if (isPrime(i)) {
+      primeCounter++;
+      primeArr.push(i);
+      primeArr.shift();
+    }
+    i++;
+  }
+
+  return primeArr;
+};
+
+console.log(primeCountsWhile(6));
 // ************************************************************
 //////////////function check whether a is prime
 // function isPrime(n) {
