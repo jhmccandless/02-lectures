@@ -182,6 +182,12 @@ console.log(primeCountsWhile(6));
 // console.log(is_prime(4534532235));
 // ************************************************************
 
+// pythag triplet
+const pythag = function (total) {
+  const sides = [a, b, c];
+  total = sides.reduce((sum = (a, b, c) => a + b + c));
+};
+
 // single character difference///////////////////////////
 const str1 = "aaabbcdd";
 const str2 = "abdbacade";
