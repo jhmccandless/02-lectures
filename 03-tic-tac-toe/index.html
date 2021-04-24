@@ -24,14 +24,24 @@
         grid-auto-rows: 100px;
       }
 
-      .wrapper > div {
-        border: 3px solid black;
+      .block {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
         text-align: justify;
       }
 
+      .board-btn-div {
+        grid-area: 1/1/1/1;
+        width: 1fr;
+        height: 1fr;
+        visibility: visible;
+      }
+
       .board-btn {
-        width: 100%;
         height: 100%;
+        width: 100%;
       }
 
       #x {
@@ -39,7 +49,13 @@
         height: 100%;
       }
 
+      .selection-div {
+        grid-area: 1/1/1/1;
+        visibility: hidden;
+      }
+
       .selection {
+        margin: 30px;
       }
     </style>
   </head>
@@ -49,33 +65,77 @@
       <button id="new-game">New Game</button>
     </div>
     <div class="wrapper">
-      <div>
-        <!-- <button class="board-btn" id="box-1">1</button> -->
-        <h1>X</h1>
+      <div class="block" id="box-1">
+        <div class="board-btn-div">
+          <button class="board-btn">1</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-2">2</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-2">2</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-3">3</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-3">3</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-4">4</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-4">1</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-5">5</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-5">1</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-6">6</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-6">1</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-7">7</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-7">1</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-8">8</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-8">1</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
-      <div>
-        <button class="board-btn" id="box-9">9</button>
+      <div class="block">
+        <div class="board-btn-div">
+          <button class="board-btn" id="box-9">1</button>
+        </div>
+        <div class="selection-div">
+          <h1 class="selection">O</h1>
+        </div>
       </div>
     </div>
   </body>
