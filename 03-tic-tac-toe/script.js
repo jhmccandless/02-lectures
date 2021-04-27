@@ -50,36 +50,25 @@ let text9 = document.querySelector("#text-9").textContent;
 
 // area1.style.visibility = "hidden";
 
-let boxNum, gameInput, activePlayer, selectedMatrix, playing;
+let boxNum,
+  gameInput,
+  activePlayer,
+  selectedMatrix,
+  playing,
+  playerTurn,
+  matrix1,
+  matrix0;
 const init = function () {
   activePlayer = 1;
   gameInput = "X";
-  selectedMatrix = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  // selectedMatrix = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  matrix1 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  matrix0 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   playing = true;
 };
 init();
-const playerChange = function () {
-  if (activePlayer === 0) {
-    gameInput = "X";
-    activePlayer = 1;
-  } else {
-    gameInput = "O";
-    activePlayer = 0;
-  }
-};
 
-document.querySelector("#new-game").addEventListener("click", function () {
-  const btnDivSelect = document.getElementsByClassName("board-btn-div");
-  const selDiv = document.getElementsByClassName("selection-div");
-  for (let i = 0; i < 9; i++) {
-    btnDivSelect[i].style.visibility = "visible";
-    selDiv[i].style.visibility = "hidden";
-  }
-  selectedMatrix = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-  init();
-});
-
-const checkWin = function () {
+const checkWin = function (selectedMatrix) {
   if (selectedMatrix[0] === 1) {
     if (selectedMatrix[1] === 1) {
       if (selectedMatrix[2] === 1) {
@@ -140,16 +129,48 @@ const checkWin = function () {
   }
 };
 
+const playerMatixUpdate = function () {
+  if (activePlayer === 1) {
+    matrix1[boxNum - 1] = 1;
+    checkWin(matrix1);
+  } else {
+    matrix0[boxNum - 1] = 1;
+    checkWin(matrix0);
+  }
+};
+
+const playerChange = function () {
+  if (activePlayer === 0) {
+    gameInput = "X";
+    activePlayer = 1;
+  } else {
+    gameInput = "O";
+    activePlayer = 0;
+  }
+};
+
+document.querySelector("#new-game").addEventListener("click", function () {
+  const btnDivSelect = document.getElementsByClassName("board-btn-div");
+  const selDiv = document.getElementsByClassName("selection-div");
+  for (let i = 0; i < 9; i++) {
+    btnDivSelect[i].style.visibility = "visible";
+    selDiv[i].style.visibility = "hidden";
+  }
+  // selectedMatrix = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  matrix1 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  matrix0 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  init();
+});
+
 button1.addEventListener("click", function () {
   if (playing) {
     boxNum = 1;
     area1.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-1").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[0] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button2.addEventListener("click", function () {
@@ -158,10 +179,9 @@ button2.addEventListener("click", function () {
     area2.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-2").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[1] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button3.addEventListener("click", function () {
@@ -170,10 +190,9 @@ button3.addEventListener("click", function () {
     area3.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-3").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[2] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button4.addEventListener("click", function () {
@@ -182,10 +201,9 @@ button4.addEventListener("click", function () {
     area4.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-4").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[3] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button5.addEventListener("click", function () {
@@ -194,10 +212,9 @@ button5.addEventListener("click", function () {
     area5.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-5").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[4] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button6.addEventListener("click", function () {
@@ -206,10 +223,9 @@ button6.addEventListener("click", function () {
     area6.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-6").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[5] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button7.addEventListener("click", function () {
@@ -218,10 +234,9 @@ button7.addEventListener("click", function () {
     area7.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-7").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[6] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button8.addEventListener("click", function () {
@@ -230,10 +245,9 @@ button8.addEventListener("click", function () {
     area8.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-8").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[7] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 button9.addEventListener("click", function () {
@@ -242,10 +256,9 @@ button9.addEventListener("click", function () {
     area9.style.visibility = "visible";
     document.querySelector(`#brd-btn-${boxNum}`).style.visibility = "hidden";
     document.querySelector("#text-9").textContent = gameInput;
+    playerMatixUpdate();
     playerChange();
-    selectedMatrix[8] = 1;
-    console.log(selectedMatrix);
-    checkWin();
+    console.log(matrix0, matrix1);
   }
 });
 
