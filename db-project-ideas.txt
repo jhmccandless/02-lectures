@@ -1,0 +1,5 @@
+Ideas:
+    Calorie counter
+    Shopping/todo list
+    clock in and out
+    climbing app
