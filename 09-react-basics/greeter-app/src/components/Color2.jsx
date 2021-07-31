@@ -9,7 +9,6 @@ class Color2 extends React.Component {
   render() {
     return this.props.color.map((e) => (
       <div
-        className="main"
         key={e.id}
         style={{ width: "100px", height: "100px", backgroundColor: e.color }}
       >
