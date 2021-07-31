@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- Random Assignments -->
+
+I was able to get the Greeter function done from the online syllabus.
+
+I was also able to do some sort of random color generator in Color.jsx
+
+I am following along with Juan Mrad for Color2.jsx to see how he would do form top to bottom.
